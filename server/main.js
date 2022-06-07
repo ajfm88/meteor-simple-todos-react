@@ -1,7 +1,8 @@
 import { Meteor } from 'meteor/meteor';
 import { Accounts } from 'meteor/accounts-base';
-import { TasksCollection } from '/imports/api/TasksCollection';
+import { TasksCollection } from '/imports/db/TasksCollection';
 import { ServiceConfiguration } from 'meteor/service-configuration';
+import '/imports/api/tasksMethods';
 
 const insertTask = (taskText, user) =>
   TasksCollection.insert({
@@ -41,8 +42,8 @@ ServiceConfiguration.configurations.upsert(
   {
     $set: {
       loginStyle: 'popup',
-      clientId: '4b9f9c09485b4bba83ba', // insert your clientId here
-      secret: 'f9205f6f03b6c45547e70efe1171dbe0409440df', // insert your secret here
+      clientId: '', // insert your clientId here
+      secret: '', // insert your secret here
     },
   }
 );
